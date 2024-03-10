@@ -7,25 +7,26 @@
 class Polynom
 {
 private:
-    std::vector<int> coeff; // coeffs of polynom
-    uint32_t r; // degree of polynomial
+    std::vector<int> coeffs; // coeffs of polynom
 public:
     Polynom();
     Polynom(const Polynom&);
-    Polynom(const std::vector<int>&);  // coeffs 
-    Polynom(const std::vector<int>&, const int); // coeffs + r
+    Polynom(const std::vector<int>&);  // coeffs
     ~Polynom();
 
-    int getCoeff(int uint32_t);
+    std::vector<int> getCoeffs();
+    int getCoeff(uint32_t);
+    uint32_t getDeg();
 
     void setPolynom(const Polynom&);
     void setPolynom(const std::vector<int>&);
     void setPolynom(const std::vector<int>&, const int);
 
     void shrink();
+    
+    bool operator==(const Polynom&);
+    bool operator!=(const Polynom&);
 };
-
-bool operator==(const Polynom&, const Polynom&);
 
 
 #endif
