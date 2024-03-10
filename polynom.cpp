@@ -30,6 +30,23 @@ uint32_t Polynom::getDeg(){
     return coeffs.size();
 }
 
+void Polynom::setPolynom(const Polynom& p)
+{
+    coeffs = p.coeffs;
+}
+
+void Polynom::setPolynom(const std::vector<int>& k)
+{
+    coeffs = k;
+}
+
+int Polynom::operator[](uint32_t i)
+{
+    if (0 <= i < coeffs.size())
+        return coeffs[i];
+    throw "Index out of range";
+}
+
 bool Polynom::operator==(const Polynom& p)
 {
     if (coeffs.size() != p.coeffs.size())

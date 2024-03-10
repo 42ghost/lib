@@ -20,10 +20,11 @@ public:
 
     void setPolynom(const Polynom&);
     void setPolynom(const std::vector<int>&);
-    void setPolynom(const std::vector<int>&, const int);
 
     void shrink();
     
+    //int &operator[](uint32_t);
+    int operator[](uint32_t); // getCoeff
     bool operator==(const Polynom&);
     bool operator!=(const Polynom&);
 };
